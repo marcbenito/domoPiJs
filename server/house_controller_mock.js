@@ -1,5 +1,8 @@
 'use strict';
 
+
+//THIS CLAS IS FOR TESTING WEB-COMPONENTS
+
 var _ = require('underscore');
 
 
