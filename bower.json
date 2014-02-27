@@ -1,0 +1,11 @@
+{
+  "name": "domoPiJS",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.9.0",
+    "bootstrap": "~3.0.2",
+    "seiyria-bootstrap-slider":"~1.9.0"
+  },
+  "devDependencies": {},
+  "directory": "assets"
+}

@@ -1,0 +1,41 @@
+{
+  "name": "domoPiJs",
+  "description": "Domotic framework",
+  "version": "0.0.1",
+  "main": "main.js",
+  "keywords": ["domotics", "home automation"],
+  "author": {
+    "name": "Marc Benito",
+    "email": "marc@codeandfun.com",
+    "url": "http://github.com/sbennel"
+  },
+  "homepage": "http://www.codeandfun.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sbennel/domoPiJs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sbennel/domoPiJs/issues"
+  },
+  "licenses": [
+    {
+      "type": "TO-SELECT",
+      "url": "http://www.selecting.com"
+    }
+  ],
+  "dependencies": {
+   "express":"*",
+   "moment": "*",
+   "underscore":"*",
+   "async":"*",
+   "johnny-five":"*",
+   "hbs":"*"
+  },
+  "devDependencies": {
+    
+  },
+  "engines": { "node": ">= 0.8.0" },
+  "scripts": {
+    "start": "node main"
+  }
+}

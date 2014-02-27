@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DomoJS</title>
+<link href="/css/style.css" rel="stylesheet">
+<link href="/assets/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<a href="/"><</a><h1>DomoPiJs</h1>
+</header>
+<main>
+<h2>{{name}}</h2>
+<h3 class="value-text">{{value}}%</h3>
+
+<input type="range" value="{{value}}" min="0" max="100">
+   
+</main>
+<footer>
+  
+</footer>
+ <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/jqueryMobile/jquery.mobile.custom.min.js"></script>
+    
+    <script type='text/javascript'>
+        $(document).ready(function() {
+        
+      
+    $('input[type=range]').mouseup(function(e) {
+      console.log($(this).val());
+      $.post('/percentage/{{id}}', {value:$(this).val()});
+      $('.value-text').html( $(this).val()+ ' %');
+    });
+
+    $('input[type=range]').on('touchend',function(e) {
+      console.log($(this).val());
+      $.post('/percentage/{{id}}', {value:$(this).val()});
+      $('.value-text').html( $(this).val()+ ' %');
+    });
+      
+      
+      
+    });
+    
+    </script>
+  
+</body>
+</html>

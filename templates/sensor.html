@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DomoJS</title>
+<link href="/css/style.css" rel="stylesheet">
+<link href="/assets/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<a href="/"><</a><h1>DomoPiJs</h1>
+</header>
+<main>
+<h2>{{name}}</h2>
+<h3 class="value-text">{{value}} ºC</h3>
+</main>
+<footer>
+  
+</footer>
+ <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/assets/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+    <script type='text/javascript'>
+    'use strict';
+    $(document).ready(function() {
+        setInterval(function() {
+          $.get('/sensor/{{id}}/value', function(data) {
+            $('.value-text').html(data.val+' ºC');
+          });
+        },3000);
+    });
+    </script>
+  
+</body>
+</html>

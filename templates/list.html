@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="/assets/bootstrap/ico/favicon.ico">
+    <title>DomoPiJs</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1>DomoPiJs</h1>
+    </header>
+    <main>
+        <ul>
+            {{#each elements}}
+            <li><a href="{{path}}">{{name}}</a>
+            </li>
+
+            {{/each}}
+        </ul>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function() {
+        $.each($('li a'), function(index, val) {
+            var path = $('li a').eq(index).attr('href');
+            $.get(path + '/value', function(data) {
+                if (path.search("light") == 1) {
+                    if (data.value=='true') {
+                        $('li a').eq(index).closest('li').addClass('active');
+                    } else {
+                        console.log("no",data.value)
+                        $('li a').eq(index).closest('li').removeClass('active');
+                    }
+                } else {
+                    if (data.val) {
+                        data.value = data.val;
+                    }
+                    if (data.value != 0) {
+                        
+                        $('li a').eq(index).closest('li').addClass('active');
+                    } else {
+                        $('li a').eq(index).closest('li').removeClass('active');
+                    }
+                }
+
+            });
+        });
+    });
+    </script>
+
+
+</body>
+
+</html>

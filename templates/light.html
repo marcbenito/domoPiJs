@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DomoJS</title>
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<a href="/"><</a><h1>DomoPiJs</h1>
+</header>
+<main>
+<h2>{{name}}</h2>
+<button>Click</button>
+</main>
+<footer>
+	
+</footer>
+<script src="/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+
+    <script type='text/javascript'>
+        $(document).ready(function() {
+        var value = {{value}};
+        
+        if(value){
+    			$('button').addClass('active');
+    		}else{
+    			$('button').removeClass('active');
+    		}
+        
+    	$('button').click(function(e) {
+    		console.log(value);
+    		value = !value;
+    		$.post('/light/{{id}}', {value:value});
+    		if(value){
+    			$('button').addClass('active');
+    		}else{
+    			$('button').removeClass('active');
+    		}
+    		console.log(value);
+    		
+
+    	});
+    });
+    </script>
+
+	
+</body>
+</html>
