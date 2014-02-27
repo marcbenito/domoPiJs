@@ -33,8 +33,8 @@ var house = new HouseController(function() {
     app.listen(CONFIG.serverPort);
     console.log('Server listening on port: %d', CONFIG.serverPort);
     //house.append( new HouseController.Percentage(6,'Percentage Dev')); //For PWM usage
-    house.append( new HouseController.Light(3,'Light')); //For swhitch lights
-    //house.append( new HouseController.TempSensor(4,'Temperature sensor lm35')); 
+    house.append( new HouseController.Light(3,'Light')); //For swhitch lights on pin 3
+    //house.append( new HouseController.TempSensor('A0','Temperature sensor lm35')); 
 
    
 });
