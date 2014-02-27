@@ -9,7 +9,7 @@ module.exports = function(app, home) {
 
 		var elems = home.getList();
 		
-		var transformed = _.map(elems, function(elem,idx) {
+		var transformed = _.map(elems, function(elem) {
 			
 			var obj = {
 				name:elem.name,
@@ -26,13 +26,12 @@ module.exports = function(app, home) {
 			obj.path = obj.path + elem.pin;
 			return obj;
 		});
-		console.log('inserto', transformed);
+
 		res.render('list.html', {elements:transformed});
 	});
 
 	app.get('/light/:lightId', function(req, res) {
 		var dev = home.get(req.params.lightId);
-		console.log('tengo', dev);
 		var obj = {
 			id: dev.pin,
 			name: dev.name,
@@ -42,7 +41,6 @@ module.exports = function(app, home) {
 	});
 	app.get('/light/:lightId/value', function(req, res) {
 		var dev = home.get(req.params.lightId);
-		console.log('tengo', dev);
 		var obj = {
 			id: dev.pin,
 			name: dev.name,
@@ -52,13 +50,13 @@ module.exports = function(app, home) {
 	});
 	app.post('/light/:buttonId', function(req, res) {
 
-		console.log('me actualizan boton', req.body);
+		
 		home.get(req.params.buttonId).set(req.body.value === 'true');
 		res.send(201);
 	});
 	app.get('/percentage/:buttonId', function(req, res) {
 		var dev = home.get(req.params.buttonId);
-		console.log('tengo', dev);
+		
 		var obj = {
 			id: dev.pin,
 			name: dev.name,
@@ -68,7 +66,7 @@ module.exports = function(app, home) {
 	});
 	app.get('/percentage/:buttonId/value', function(req, res) {
 		var dev = home.get(req.params.buttonId);
-		console.log('tengo', dev);
+		
 		var obj = {
 			id: dev.pin,
 			name: dev.name,
@@ -78,12 +76,10 @@ module.exports = function(app, home) {
 	});
 
 	app.post('/percentage/:percentageId', function(req, res) {
-		console.log('me llega', req.params);
+		
 		var sensor = home.get(req.params.percentageId);
 		if(sensor !== undefined){
-
 			sensor.set(req.body.value);
-			console.log('Cambio valor', req.body);
 		}
 		res.send(201);
 	});
@@ -99,7 +95,7 @@ module.exports = function(app, home) {
 	});
 	app.get('/sensor/:sensorId/value', function(req, res) {
 		var sensor = home.get(req.params.sensorId);
-		console.log(sensor);
+		
 		if(sensor !== undefined){
 
 			res.send(200, {val:sensor.value});

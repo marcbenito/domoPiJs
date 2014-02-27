@@ -20,8 +20,9 @@ var houseController = function(cb) {
 	});
 
 	this.board.on('error', function(err) {
-		console.log('La placa ha petado', err);
-		console.trace(err);
+		console.log('Board is down!!', err);
+		console.log(trace);
+		
 	});
 
 	return this;
