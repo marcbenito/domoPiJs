@@ -6,6 +6,5 @@
     "bootstrap": "~3.0.2",
     "seiyria-bootstrap-slider":"~1.9.0"
   },
-  "devDependencies": {},
-  "directory": "assets"
+  "devDependencies": {}
 }
