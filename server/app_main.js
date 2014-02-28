@@ -3,7 +3,7 @@
 console.log('LOADING...');
 
 
-var CONFIG = require('../config.json');
+var CONFIG = require('./config.json');
 
 
 var express = require('express'),
