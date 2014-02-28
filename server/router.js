@@ -89,7 +89,7 @@ module.exports = function(app, home) {
 		var obj = {
 			id: dev.pin,
 			name: dev.name,
-			value: dev.value
+			value: dev.value,
 		};
 		res.render('sensor.html', obj);
 	});
@@ -98,10 +98,10 @@ module.exports = function(app, home) {
 		
 		if(sensor !== undefined){
 
-			res.send(200, {val:sensor.value});
+			res.send(200, {val:sensor.value, unit : sensor.unit});
 		}
 		else{
-			res.send(200, {val:0});
+			res.send(200, {val:0, unit:'??'});
 		}
 
 		

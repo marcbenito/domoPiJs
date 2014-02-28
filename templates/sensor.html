@@ -24,7 +24,7 @@
     $(document).ready(function() {
         setInterval(function() {
           $.get('/sensor/{{id}}/value', function(data) {
-            $('.value-text').html(data.val+' ºC');
+            $('.value-text').html(data.val+' '+ data.unit);
           });
         },3000);
     });

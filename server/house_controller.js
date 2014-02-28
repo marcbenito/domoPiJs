@@ -41,14 +41,17 @@ houseController.prototype.append = function(device) {
 	});
 };
 houseController.prototype.get = function(pin) {
-	
 	return this.devices[''+pin];
 };
 
 
 houseController.Light = require('./devices/light');
-houseController.TempSensor = require('./devices/templm35');
+houseController.TempSensorLm35 = require('./devices/templm35');
 houseController.Percentage = require('./devices/percentage');
+houseController.distanceSharp = require('./devices/distance_sharp');
+houseController.TempSensorL36Gz = require('./devices/templ36gz');
+houseController.Potentiometer = require('./devices/potentiometer');
+houseController.LightSensor = require('./devices/light_sensor');
 
 
 

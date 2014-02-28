@@ -11,12 +11,11 @@ var TempSensor = function(pin, label) {
 		freq: 250
 	});
 	this.type = 'sensor';
-	this.unit = 'º';
+	this.unit = ' %';
 
-	this.hard.on('data', function() {
-		var voltage = this.value * 0.004882814;
-		var celsius = (voltage - 0.5) * 10;
-		self.value = celsius.toFixed(1);
+	this.hard.scale([0, 100]).on('change', function() {
+
+		self.value = parseInt(this.value);
 	});
 	return this;
 

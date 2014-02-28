@@ -14,8 +14,10 @@ var TempSensor = function(pin, label) {
 	this.unit = 'º';
 
 	this.hard.on('data', function() {
-		var voltage = this.value * 0.004882814;
-		var celsius = (voltage - 0.5) * 10;
+		var voltage = this.value * 5.0;
+		voltage /= 1024.0;
+		var celsius = (voltage - 0.5) * 100;
+
 		self.value = celsius.toFixed(1);
 	});
 	return this;

@@ -1,3 +1,4 @@
+
 'use strict';
 var five = require('johnny-five');
 
@@ -11,12 +12,13 @@ var TempSensor = function(pin, label) {
 		freq: 250
 	});
 	this.type = 'sensor';
-	this.unit = 'º';
+	this.unit = ' LUX';
 
 	this.hard.on('data', function() {
-		var voltage = this.value * 0.004882814;
-		var celsius = (voltage - 0.5) * 10;
-		self.value = celsius.toFixed(1);
+
+		
+		self.value = this.value.toFixed(2);
+
 	});
 	return this;
 
