@@ -44,6 +44,22 @@ bower install
 npm start
 
 ```
+### For windows Users/Testing:
+
+Download and install [Visual Studio 2012](http://go.microsoft.com/?linkid=9816758)
+
+Use this set of commands:
+
+``` bash
+git clone git://github.com/sbennel/domoPiJs.git && cd domoPiJs
+
+npm install --msvs_version=2012
+
+bower install
+
+npm start
+
+```
 
 ### configure the devices!!
 
