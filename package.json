@@ -24,7 +24,7 @@
     }
   ],
   "dependencies": {
-   "express":"*",
+   "express":"3.x",
    "moment": "*",
    "underscore":"*",
    "async":"*",
